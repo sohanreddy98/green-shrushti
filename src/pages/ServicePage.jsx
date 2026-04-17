@@ -86,8 +86,8 @@ export default function ServicePage() {
         <h2>Ready to discuss<br />{service.title.toLowerCase()}?</h2>
         <p>Talk to our team about volumes, timelines, and commercial terms — we'll come back to you within 24 hours.</p>
         <div className="cta-btns">
-          <a href="mailto:info@greenshrushti.com" className="btn btn-white">Email Us</a>
-          <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-outline-light">WhatsApp</a>
+          <a href="mailto:support@greenshrushti.in" className="btn btn-white">Email Us</a>
+          <a href="https://wa.me/918482841702" className="btn btn-outline-light">WhatsApp</a>
         </div>
       </section>
     </>

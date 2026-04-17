@@ -299,9 +299,9 @@ export default function Home() {
         <h2>Ready to Streamline<br />Your Waste Operations?</h2>
         <p>Whether you need recyclable material supply or compliant waste management, we're ready to support your operations.</p>
         <div className="cta-btns">
-          <a href="mailto:info@greenshrushti.com" className="btn btn-white">Request Material Availability</a>
-          <a href="https://wa.me/91XXXXXXXXXX" className="btn btn-outline-light">WhatsApp Us</a>
-          <a href="tel:+91XXXXXXXXXX" className="btn btn-outline-light">Call Now</a>
+          <a href="mailto:support@greenshrushti.in" className="btn btn-white">Request Material Availability</a>
+          <a href="https://wa.me/918482841702" className="btn btn-outline-light">WhatsApp Us</a>
+          <a href="tel:+918482841702" className="btn btn-outline-light">Call Now</a>
         </div>
       </section>
     </>

@@ -86,7 +86,7 @@ export default function Terms() {
           <p className="legal-contact">
             Green Shrushti Waste Management and Sustainability Pvt. Ltd.<br />
             Mumbai, Maharashtra, India<br />
-            Email: <a href="mailto:info@greenshrushti.com">info@greenshrushti.com</a>
+            Email: <a href="mailto:support@greenshrushti.in">support@greenshrushti.in</a>
           </p>
         </div>
       </section>

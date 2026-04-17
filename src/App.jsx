@@ -46,9 +46,9 @@ function Footer() {
           <div className="footer-col">
             <h5>Contact</h5>
             <span>Mumbai, Maharashtra</span>
-            <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
-            <a href="mailto:info@greenshrushti.com">info@greenshrushti.com</a>
-            <a href="https://wa.me/91XXXXXXXXXX">WhatsApp Us</a>
+            <a href="tel:+918482841702">+91 8482 841702</a>
+            <a href="mailto:support@greenshrushti.in">support@greenshrushti.in</a>
+            <a href="https://wa.me/918482841702">WhatsApp Us</a>
           </div>
         </div>
         <hr className="footer-hr" />

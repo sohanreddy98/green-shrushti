@@ -71,7 +71,7 @@ export default function Privacy() {
           </ul>
           <p>
             To exercise any of these rights, contact us at{' '}
-            <a href="mailto:info@greenshrushti.com">info@greenshrushti.com</a>.
+            <a href="mailto:support@greenshrushti.in">support@greenshrushti.in</a>.
           </p>
 
           <h2>7. Cookies</h2>
@@ -91,7 +91,7 @@ export default function Privacy() {
           <p className="legal-contact">
             Green Shrushti Waste Management and Sustainability Pvt. Ltd.<br />
             Mumbai, Maharashtra, India<br />
-            Email: <a href="mailto:info@greenshrushti.com">info@greenshrushti.com</a>
+            Email: <a href="mailto:support@greenshrushti.in">support@greenshrushti.in</a>
           </p>
         </div>
       </section>
