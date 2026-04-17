@@ -152,6 +152,15 @@
   transition: background .2s; letter-spacing: 0.01em;
 }
 .hc-cta:hover { background: var(--pine); }
+.hc-cta:disabled { opacity: 0.55; cursor: not-allowed; }
+.hc-cta:disabled:hover { background: var(--forest); }
+
+.contact-error {
+  background: #fdecec; border: 1px solid #f5c6c6;
+  color: #9b2c2c; font-size: 0.88rem; line-height: 1.5;
+  padding: 10px 14px; border-radius: 8px;
+  margin-top: 14px; text-align: center;
+}
 
 /* success state */
 .hc-sent { text-align: center; justify-content: center; align-items: center; display: flex; flex-direction: column; gap: 12px; min-height: 260px; }

@@ -59,15 +59,32 @@ const faqs = [
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '', company: '', email: '', phone: '', service: '', volume: '', message: '',
   })
   const set = useCallback(k => e => setForm(f => ({ ...f, [k]: e.target.value })), [])
 
-  const submit = e => {
+  const submit = async e => {
     e.preventDefault()
     if (!form.name || !form.phone || !form.email) return
-    setSent(true)
+    setError('')
+    setSending(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, source: 'contact page' }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Something went wrong')
+      setSent(true)
+    } catch (err) {
+      setError(err.message || 'Could not send message. Please try again or email us directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -157,7 +174,10 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="hc-cta">Send Enquiry →</button>
+                <button type="submit" className="hc-cta" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send Enquiry →'}
+                </button>
+                {error && <p className="contact-error">{error}</p>}
                 <p className="contact-disclaimer">We respond within one working day. Your details are never shared with third parties.</p>
               </form>
             )}

@@ -71,13 +71,33 @@ const logos = [
 
 function HeroForm() {
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({ name: '', company: '', phone: '', need: '' })
   const set = useCallback(k => e => setForm(f => ({ ...f, [k]: e.target.value })), [])
 
-  const submit = e => {
+  const submit = async e => {
     e.preventDefault()
     if (!form.name || !form.phone || !form.need) return
-    setSent(true)
+    setError('')
+    setSending(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name, company: form.company, phone: form.phone,
+          service: form.need, source: 'hero',
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Something went wrong')
+      setSent(true)
+    } catch (err) {
+      setError(err.message || 'Could not send. Please try again.')
+    } finally {
+      setSending(false)
+    }
   }
 
   if (sent) return (
@@ -105,7 +125,10 @@ function HeroForm() {
           <option>General Enquiry</option>
         </select>
       </div>
-      <button type="submit" className="hc-cta">Send Enquiry →</button>
+      <button type="submit" className="hc-cta" disabled={sending}>
+        {sending ? 'Sending…' : 'Send Enquiry →'}
+      </button>
+      {error && <p className="contact-error" style={{ marginTop: 10 }}>{error}</p>}
     </form>
   )
 }
