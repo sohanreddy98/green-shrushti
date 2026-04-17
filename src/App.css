@@ -162,6 +162,17 @@
   margin-top: 14px; text-align: center;
 }
 
+/* hidden from humans, visible to spam bots */
+.honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* success state */
 .hc-sent { text-align: center; justify-content: center; align-items: center; display: flex; flex-direction: column; gap: 12px; min-height: 260px; }
 .hc-sent-icon { width: 56px; height: 56px; border-radius: 50%; background: #EFF7F2; border: 2px solid var(--sage); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--sage); margin: 0 auto; }

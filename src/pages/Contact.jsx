@@ -62,7 +62,7 @@ export default function Contact() {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const [form, setForm] = useState({
-    name: '', company: '', email: '', phone: '', service: '', volume: '', message: '',
+    name: '', company: '', email: '', phone: '', service: '', volume: '', message: '', website: '',
   })
   const set = useCallback(k => e => setForm(f => ({ ...f, [k]: e.target.value })), [])
 
@@ -114,6 +114,10 @@ export default function Contact() {
               </div>
             ) : (
               <form className="contact-form" onSubmit={submit}>
+                <input
+                  type="text" name="website" className="honeypot" tabIndex={-1} autoComplete="off"
+                  value={form.website} onChange={set('website')} aria-hidden="true"
+                />
                 <span className="eyebrow">Enquiry Form</span>
                 <h2 className="heading" style={{ fontSize: '2rem', marginBottom: 28 }}>Send us a message</h2>
 

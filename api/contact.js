@@ -3,6 +3,26 @@ import { Resend } from 'resend'
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'support@greenshrushti.in'
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Green Shrushti <onboarding@resend.dev>'
 
+// ── Rate limiting (in-memory, per warm instance) ──
+const RATE_LIMIT_MAX = 5
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000
+const rateLimitStore = new Map()
+
+function checkRateLimit(ip) {
+  const now = Date.now()
+  const record = rateLimitStore.get(ip)
+
+  if (!record || now > record.resetAt) {
+    rateLimitStore.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
+    return { allowed: true }
+  }
+  if (record.count >= RATE_LIMIT_MAX) {
+    return { allowed: false, resetIn: Math.ceil((record.resetAt - now) / 1000) }
+  }
+  record.count++
+  return { allowed: true }
+}
+
 const esc = str => String(str || '')
   .replace(/&/g, '&amp;')
   .replace(/</g, '&lt;')
@@ -126,6 +146,20 @@ const buildConfirmationEmail = ({ name, service }) => {
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  // ── Honeypot: if the hidden "website" field is filled, it's a bot ──
+  if (req.body?.website) {
+    // Pretend it worked so bots don't retry
+    return res.status(200).json({ success: true })
+  }
+
+  // ── Rate limiting ──
+  const ip = (req.headers['x-forwarded-for']?.split(',')[0].trim()) ||
+             req.headers['x-real-ip'] || 'unknown'
+  const rl = checkRateLimit(ip)
+  if (!rl.allowed) {
+    return res.status(429).json({ error: `Too many requests. Please try again in ${rl.resetIn} seconds.` })
   }
 
   const apiKey = process.env.RESEND_API_KEY
