@@ -1,0 +1,39 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:     #0E1F13;
+  --forest:  #163825;
+  --pine:    #1D5436;
+  --sage:    #4A9B6B;
+  --mint:    #A8D4B8;
+  --cream:   #F6F1E9;
+  --paper:   #FDFAF6;
+  --white:   #FFFFFF;
+  --muted:   #7A8C7E;
+  --border:  rgba(0,0,0,0.07);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  text-align: left;
+}
