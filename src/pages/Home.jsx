@@ -115,7 +115,7 @@ export default function Home() {
       <section className="hero" style={{ backgroundImage: `linear-gradient(105deg,rgba(10,24,15,0.88) 32%,rgba(10,24,15,0.46) 100%),url('${HERO_BG}')` }}>
         <div className="hero-inner">
           <div className="hero-left">
-            <h1>Reliable Supply of<br /><em>Recyclable Materials</em><br />&amp; Compliant Waste Solutions</h1>
+            <h1>Reliable Supply of<br /><em>Recyclable Materials</em><br />&amp; Compliant Waste<br />Solutions</h1>
             <p>We bridge the gap between waste generators and recyclers — ensuring consistent raw material supply and efficient, compliant waste management for industries across Mumbai.</p>
             <div className="hero-btns">
               <a href="#contact" className="btn btn-green">Request Material Availability</a>

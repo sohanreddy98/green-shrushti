@@ -9,6 +9,8 @@ import Projects from './pages/Projects'
 import ESG from './pages/ESG'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -52,7 +54,11 @@ function Footer() {
         <hr className="footer-hr" />
         <div className="footer-bottom">
           <p>© 2026 Green Shrushti. All rights reserved.</p>
-          <p>Made in <span style={{color:'#A8D4B8'}}>Mumbai</span> · Built for recyclers</p>
+          <div className="footer-legal">
+            <Link to="/privacy">Privacy Policy</Link>
+            <span>·</span>
+            <Link to="/terms">Terms &amp; Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>
@@ -72,6 +78,8 @@ export default function App() {
         <Route path="/esg" element={<ESG />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
       <Footer />
     </>
