@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const missionPoints = [
   { title: 'End-to-end waste solutions', body: 'Efficient, sustainable handling across every waste stream — from industrial scrap to municipal organics.' },
@@ -17,6 +18,11 @@ const principles = [
 export default function About() {
   return (
     <>
+      <SEO
+        title="About Us"
+        path="/about"
+        description="Green Shrushti Waste Management and Sustainability Pvt. Ltd. — a Mumbai-based environmental solutions company bridging waste generators with recyclers, recovering value through integrated waste management and carbon-credit projects."
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">About Green Shrushti</span>

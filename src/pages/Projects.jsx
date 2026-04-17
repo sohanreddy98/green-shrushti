@@ -1,3 +1,5 @@
+import SEO from '../components/SEO'
+
 const projects = [
   {
     title: 'Mumbai Township — C&D Waste Programme',
@@ -28,6 +30,11 @@ const projects = [
 export default function Projects() {
   return (
     <>
+      <SEO
+        title="Projects & Case Studies"
+        path="/projects"
+        description="Selected projects from Green Shrushti — C&D waste programmes, scrap cycles, and biochar carbon-removal projects with verified outcomes and real numbers."
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">Projects & Case Studies</span>

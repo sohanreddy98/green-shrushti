@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getService, serviceCategories } from '../data/services'
+import SEO from '../components/SEO'
 
 export default function ServicePage() {
   const { slug } = useParams()
@@ -14,6 +15,12 @@ export default function ServicePage() {
 
   return (
     <>
+      <SEO
+        title={service.title}
+        path={`/services/${service.slug}`}
+        description={service.tagline}
+        image={service.image}
+      />
       <section
         className="sp-hero"
         style={{ backgroundImage: `linear-gradient(105deg,rgba(10,24,15,0.86) 30%,rgba(10,24,15,0.55) 100%),url('${service.image}')` }}

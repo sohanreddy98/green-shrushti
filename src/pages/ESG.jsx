@@ -1,3 +1,5 @@
+import SEO from '../components/SEO'
+
 const services = [
   { title: 'ESG Strategy Support', body: 'Materiality assessment, peer benchmarking, and strategy frameworks tailored to Indian mid-market companies — not generic global templates.' },
   { title: 'Corporate Sustainability Consulting', body: 'Hands-on advisory across waste, water, energy, and Scope 3 emissions — with implementation partners, not just slide decks.' },
@@ -10,6 +12,11 @@ const services = [
 export default function ESG() {
   return (
     <>
+      <SEO
+        title="ESG & Sustainability Advisory"
+        path="/esg"
+        description="ESG strategy, sustainability consulting, net-zero roadmaps, BRSR reporting, and carbon accounting for Indian mid-market companies — operational ESG, not window-dressing."
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">ESG & Sustainability</span>

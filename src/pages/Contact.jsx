@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react'
+import SEO from '../components/SEO'
 
 const channels = [
   {
@@ -71,6 +72,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact Us"
+        path="/contact"
+        description="Get in touch with Green Shrushti for waste management, recycling, carbon credit, or ESG enquiries. We respond within one working day."
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">Get in Touch</span>

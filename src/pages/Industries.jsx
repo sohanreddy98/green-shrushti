@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const industries = [
   { slug: 'construction',   title: 'Construction Companies', body: 'C&D waste handling, RERA-compliant disposal documentation, and on-site segregation support for construction firms across Mumbai and Maharashtra.', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1100&q=80' },
@@ -11,6 +12,11 @@ const industries = [
 export default function Industries() {
   return (
     <>
+      <SEO
+        title="Industries We Serve"
+        path="/industries"
+        description="Waste management, recycling, and sustainability services for construction, manufacturing, municipal, agriculture, and real estate sectors across Mumbai and Maharashtra."
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">Industries We Serve</span>

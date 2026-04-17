@@ -1,6 +1,13 @@
+import SEO from '../components/SEO'
+
 export default function Privacy() {
   return (
     <>
+      <SEO
+        title="Privacy Policy"
+        path="/privacy"
+        description="How Green Shrushti collects, uses, and protects the personal information you share through our website and services."
+      />
       <section className="page-hero legal-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">Legal</span>

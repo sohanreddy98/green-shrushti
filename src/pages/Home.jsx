@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const HERO_BG = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=85'
 const WHY_IMG = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900&q=85'
@@ -112,6 +113,10 @@ function HeroForm() {
 export default function Home() {
   return (
     <>
+      <SEO
+        path="/"
+        description="Green Shrushti provides compliant waste management, recycling, sustainable solutions, and carbon-credit project development for industries, construction firms, municipalities, and agriculture across Mumbai and Maharashtra."
+      />
       <section className="hero" style={{ backgroundImage: `linear-gradient(105deg,rgba(10,24,15,0.88) 32%,rgba(10,24,15,0.46) 100%),url('${HERO_BG}')` }}>
         <div className="hero-inner">
           <div className="hero-left">

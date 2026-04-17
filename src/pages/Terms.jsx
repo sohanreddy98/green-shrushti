@@ -1,6 +1,13 @@
+import SEO from '../components/SEO'
+
 export default function Terms() {
   return (
     <>
+      <SEO
+        title="Terms & Conditions"
+        path="/terms"
+        description="Terms and conditions governing the use of the Green Shrushti website and services — covering scope, IP, liability, and Mumbai jurisdiction."
+      />
       <section className="page-hero legal-hero">
         <div className="page-hero-inner">
           <span className="eyebrow eyebrow-light">Legal</span>
