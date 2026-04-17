@@ -73,12 +73,12 @@ function HeroForm() {
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
-  const [form, setForm] = useState({ name: '', company: '', phone: '', need: '' })
+  const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', need: '' })
   const set = useCallback(k => e => setForm(f => ({ ...f, [k]: e.target.value })), [])
 
   const submit = async e => {
     e.preventDefault()
-    if (!form.name || !form.phone || !form.need) return
+    if (!form.name || !form.email || !form.phone || !form.need) return
     setError('')
     setSending(true)
     try {
@@ -86,7 +86,7 @@ function HeroForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: form.name, company: form.company, phone: form.phone,
+          name: form.name, company: form.company, email: form.email, phone: form.phone,
           service: form.need, source: 'hero',
         }),
       })
@@ -113,6 +113,7 @@ function HeroForm() {
       <p className="hc-label">Get a Quick Quote</p>
       <div className="hc-field"><label>Your Name</label><input placeholder="Rahul Sharma" value={form.name} onChange={set('name')} required /></div>
       <div className="hc-field"><label>Company</label><input placeholder="Company Pvt. Ltd." value={form.company} onChange={set('company')} /></div>
+      <div className="hc-field"><label>Email</label><input type="email" placeholder="rahul@company.com" value={form.email} onChange={set('email')} required /></div>
       <div className="hc-field"><label>Phone / WhatsApp</label><input placeholder="+91 98XXX XXXXX" value={form.phone} onChange={set('phone')} required /></div>
       <div className="hc-field">
         <label>I need</label>

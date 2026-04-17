@@ -135,11 +135,8 @@ export default async function handler(req, res) {
 
   const { name, email, phone, company, service, volume, message, source } = req.body || {}
 
-  if (!name || !phone) {
-    return res.status(400).json({ error: 'Name and phone are required' })
-  }
-  if (!email && source !== 'hero') {
-    return res.status(400).json({ error: 'Email is required' })
+  if (!name || !phone || !email) {
+    return res.status(400).json({ error: 'Name, email, and phone are required' })
   }
 
   const resend = new Resend(apiKey)
