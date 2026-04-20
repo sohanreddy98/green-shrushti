@@ -932,6 +932,7 @@ section.section-forest { background: var(--forest); }
     background: transparent; border-top: none;
     box-shadow: none;
     opacity: 1; visibility: visible; transform: none;
+    pointer-events: auto;
     max-height: 0; overflow: hidden;
     padding: 0;
     transition: max-height .35s ease, padding .2s ease;
